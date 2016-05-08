@@ -7,7 +7,7 @@ import android.os.Build;
  */
 public class HumanResourceLocation
 {
-    Long id;
+    public Long id;
     double number;
     String street;
     String surburb;
@@ -58,6 +58,12 @@ public class HumanResourceLocation
         String city;
         String province;
 
+        public Builder id(Long value)
+        {
+            this.id = value;
+            return this;
+        }
+
         public Builder number(double value)
         {
             this.number = value;
@@ -102,5 +108,7 @@ public class HumanResourceLocation
             {
             };
         }
+
+
     }
 }

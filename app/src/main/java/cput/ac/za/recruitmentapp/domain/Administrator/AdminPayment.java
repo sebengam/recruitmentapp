@@ -1,9 +1,11 @@
 package cput.ac.za.recruitmentapp.domain.Administrator;
 
+import java.io.Serializable;
+
 /**
  * Created by Tank on 4/23/2016.
  */
-public class AdminPayment
+public class AdminPayment implements Serializable
 {   Long id;
     String bank;
     String accountNumber;

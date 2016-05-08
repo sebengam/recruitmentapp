@@ -19,7 +19,7 @@ import cput.ac.za.recruitmentapp.repository.humanResource.HumanResourceExperienc
  * Created by Tank on 4/24/2016.
  */
 
-public abstract class HumanResourceExperienceRepositoryImpl extends SQLiteOpenHelper implements HumanResourceExperienceRepository
+public class HumanResourceExperienceRepositoryImpl extends SQLiteOpenHelper implements HumanResourceExperienceRepository
 {
     public static final String TABLE_NAME = "HumanResourceExperience";
     private SQLiteDatabase db;
@@ -127,8 +127,16 @@ public abstract class HumanResourceExperienceRepositoryImpl extends SQLiteOpenHe
                 new String[]{String.valueOf(entity.getId())}
         );
         return entity;
+    }
 
-
+    @Override
+    public HumanResourceExperience delete(HumanResourceExperience entity) {
+        open();
+        db.delete(
+                TABLE_NAME,
+                COLUMN_ID + " =? ",
+                new String[]{String.valueOf(entity.getId())});
+        return entity;
     }
 
     @Override
@@ -155,15 +163,7 @@ public abstract class HumanResourceExperienceRepositoryImpl extends SQLiteOpenHe
 
     }
 
-    @Override
-    public HumanResourceExperience delete(HumanResourceExperience entity) {
-        open();
-        db.delete(
-                TABLE_NAME,
-                COLUMN_ID + " =? ",
-                new String[]{String.valueOf(entity.getId())});
-        return entity;
-    }
+
 
 
     @Override
@@ -190,4 +190,5 @@ public abstract class HumanResourceExperienceRepositoryImpl extends SQLiteOpenHe
                 db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
                 onCreate(db);
     }
+
 }

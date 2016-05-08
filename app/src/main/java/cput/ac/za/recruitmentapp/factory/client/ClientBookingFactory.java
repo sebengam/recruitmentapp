@@ -1,6 +1,7 @@
 package cput.ac.za.recruitmentapp.factory.client;
 
-import cput.ac.za.recruitmentmanagerapp.domain.client.ClientBooking;
+
+import cput.ac.za.recruitmentapp.domain.client.ClientBooking;
 
 /**
  * Created by student on 2016/04/05.

@@ -1,6 +1,7 @@
 package cput.ac.za.recruitmentapp.factory.administrator;
 
-import cput.ac.za.recruitmentmanagerapp.domain.Administrator.AdminPayment;
+
+import cput.ac.za.recruitmentapp.domain.Administrator.AdminPayment;
 
 /**
  * Created by Tank on 4/23/2016.

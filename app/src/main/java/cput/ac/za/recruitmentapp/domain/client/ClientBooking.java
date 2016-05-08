@@ -42,9 +42,9 @@ public class ClientBooking
         String bookingPerson;
         String bookingCompany;
 
-        public Builder id(boolean value)
+        public Builder id(Long value)
         {
-            this.availability = value;
+            this.id = value;
             return this;
         }
 

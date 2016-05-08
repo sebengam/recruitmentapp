@@ -1,15 +1,16 @@
 package cput.ac.za.recruitmentapp.domain.client;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Tank on 4/23/2016.
  */
-public class ClientSchedule
+public class ClientSchedule implements Serializable
 {   Long id;
-    Date date;
+    String date;
     Boolean available;
-    ClientBooking personBooked;
+    String personBooked;
 
     public ClientSchedule(Builder builder)
     {
@@ -20,7 +21,11 @@ public class ClientSchedule
 
     }
 
-    public Date getDate() {
+    public Long getId() {
+        return id;
+    }
+
+    public String getDate() {
         return date;
     }
 
@@ -28,16 +33,16 @@ public class ClientSchedule
         return available;
     }
 
-    public ClientBooking getPersonBooked() {
+    public String getPersonBooked() {
         return personBooked;
     }
 
     public static class Builder
     {
         Long id;
-        Date date;
+        String date;
         Boolean available;
-        ClientBooking personBooked;
+        String personBooked;
 
 
         public Builder id(Long value)
@@ -46,7 +51,7 @@ public class ClientSchedule
             return this;
         }
 
-        public Builder date(Date value)
+        public Builder date(String value)
         {
             this.date = value;
             return this;
@@ -58,7 +63,7 @@ public class ClientSchedule
             return this;
         }
 
-        public Builder personBooked(ClientBooking value)
+        public Builder personBooked(String value)
         {
             this.personBooked = value;
             return this;

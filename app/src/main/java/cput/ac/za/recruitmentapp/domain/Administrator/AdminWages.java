@@ -1,9 +1,11 @@
 package cput.ac.za.recruitmentapp.domain.Administrator;
 
+import java.io.Serializable;
+
 /**
  * Created by Tank on 4/23/2016.
  */
-public class AdminWages
+public class AdminWages implements Serializable
 {   Long id;
     int hours;
     float ratePerHour;
@@ -15,6 +17,10 @@ public class AdminWages
         this.hours = builder.hours;
         this.ratePerHour = builder.ratePerHour;
         this.totalWages = builder.totalWages;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public int getHours() {

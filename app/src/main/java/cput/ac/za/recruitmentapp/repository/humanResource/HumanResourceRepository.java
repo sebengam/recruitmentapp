@@ -10,4 +10,5 @@ import cput.ac.za.recruitmentapp.repository.Repository;
 public interface HumanResourceRepository extends Repository<HumanResource,Long>
 {
 
+    HumanResource save(HumanResource entity);
 }

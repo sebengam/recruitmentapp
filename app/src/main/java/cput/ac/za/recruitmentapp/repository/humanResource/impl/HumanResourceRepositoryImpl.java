@@ -14,6 +14,7 @@ import java.util.Set;
 
 import cput.ac.za.recruitmentapp.conf.database.DBConstants;
 import cput.ac.za.recruitmentapp.domain.humanResource.HumanResource;
+import cput.ac.za.recruitmentapp.domain.humanResource.HumanResourceExperience;
 import cput.ac.za.recruitmentapp.repository.humanResource.HumanResourceRepository;
 
 
@@ -165,7 +166,7 @@ public abstract class HumanResourceRepositoryImpl extends SQLiteOpenHelper imple
     public Set<HumanResource> findAll()
     {
         SQLiteDatabase db = this.getReadableDatabase();
-        Set<HumanResource> humanResourceS = new HashSet<>();
+        Set<HumanResource> hr = new HashSet<>();
         open();
         Cursor cursor = db.query(TABLE_NAME, null,null,null,null,null,null);
         if (cursor.moveToFirst()) {
@@ -178,10 +179,10 @@ public abstract class HumanResourceRepositoryImpl extends SQLiteOpenHelper imple
                         .industry(cursor.getString(cursor.getColumnIndex(COLUMN_INDUSTRY)))
                         .occupation(cursor.getString(cursor.getColumnIndex(COLUMN_OCCUPATION)))
                         .build();
-                humanResourceS.add(humanResource);
+                hr.add(humanResource);
             } while (cursor.moveToNext());
         }
-        return humanResourceS;
+        return hr;
 
     }
 

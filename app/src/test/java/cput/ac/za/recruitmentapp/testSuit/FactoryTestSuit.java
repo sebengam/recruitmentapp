@@ -7,7 +7,7 @@ import cput.ac.za.recruitmentapp.Domain.humanResource.humanResource.Administrato
 import cput.ac.za.recruitmentapp.Domain.humanResource.humanResource.Administrator.AdminWagesTest;
 import cput.ac.za.recruitmentapp.Domain.humanResource.humanResource.Administrator.AdministratorTest;
 import cput.ac.za.recruitmentapp.Domain.humanResource.humanResource.Client.ClienTest;
-import cput.ac.za.recruitmentapp.Domain.humanResource.humanResource.Client.ClientBookingTest;
+import cput.ac.za.recruitmentapp.Domain.humanResource.humanResource.Client.ClientBookingRepositoryTest;
 import cput.ac.za.recruitmentapp.Domain.humanResource.humanResource.Client.ClientScheduleTest;
 import cput.ac.za.recruitmentapp.Domain.humanResource.humanResource.HumanResourceExperienceTest;
 import cput.ac.za.recruitmentapp.Domain.humanResource.humanResource.HumanResourceLocationTest;
@@ -21,7 +21,7 @@ import cput.ac.za.recruitmentapp.Domain.humanResource.humanResource.HumanResourc
         AdminPaymentTest.class,
         AdminWagesTest.class,
         ClienTest.class,
-        ClientBookingTest.class,
+        ClientBookingRepositoryTest.class,
         ClientScheduleTest.class,
         HumanResourceExperienceTest.class,
         HumanResourceLocationTest.class,

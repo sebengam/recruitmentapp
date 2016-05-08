@@ -10,7 +10,6 @@ import cput.ac.za.recruitmentapp.domain.humanResource.HumanResourceExperience;
 import cput.ac.za.recruitmentapp.repository.humanResource.HumanResourceExperienceRepository;
 import cput.ac.za.recruitmentapp.repository.humanResource.impl.HumanResourceExperienceRepositoryImpl;
 
-
 /**
  * Created by Tank on 4/24/2016.
  */
@@ -18,23 +17,12 @@ import cput.ac.za.recruitmentapp.repository.humanResource.impl.HumanResourceExpe
 public class HumanResourceExperienceRepositoryTest  extends AndroidTestCase
 {
 
-    private static final String TAG="HUMANRESOURCEEXPERIENCE TEST";
+    private static final String TAG = "HUMANRESOURCEEXPERIENCE TEST";
     private Long id;
     public void testCreateReadUpdateDelete() throws Exception
     {
         HumanResourceExperienceRepository repo = new HumanResourceExperienceRepositoryImpl(this.getContext())
-        {
-            @Override
-            public HumanResourceExperience save(HumanResourceExperience entity) {
-                return null;
-            }
-
-            @Override
-            public HumanResourceExperience deleteAll(HumanResourceExperience entity) {
-                return null;
-            }
-
-        };
+        {};
 
         // CREATE
         HumanResourceExperience createEntity = new HumanResourceExperience.Builder()
@@ -59,6 +47,9 @@ public class HumanResourceExperienceRepositoryTest  extends AndroidTestCase
         HumanResourceExperience updateEntity = new HumanResourceExperience.Builder()
                 .copy(entity)
                 .companyName("FDCD")
+                .duties("test12")
+                .startDate("fc89b@test.com")
+                .endDate("fc89b@test.co")
                 .build();
         repo.update(updateEntity);
         HumanResourceExperience newEntity = repo.findById(id);
@@ -68,8 +59,6 @@ public class HumanResourceExperienceRepositoryTest  extends AndroidTestCase
         repo.delete(updateEntity);
         HumanResourceExperience deletedEntity = repo.findById(id);
         Assert.assertNull(TAG + " DELETE", deletedEntity);
-
-
     }
 
 }

@@ -4,13 +4,14 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import cput.ac.za.recruitmentmanager.domain.client.ClientBooking;
-import cput.ac.za.recruitmentmanager.factory.client.ClientBookingFactory;
+import cput.ac.za.recruitmentapp.domain.client.ClientBooking;
+import cput.ac.za.recruitmentapp.factory.client.ClientBookingFactory;
+
 
 /**
  * Created by student on 2016/04/05.
  */
-public class ClientBookingTest
+public class ClientBookingRepositoryTest
 {
 
     private ClientBooking clientBooking;

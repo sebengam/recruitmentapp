@@ -1,10 +1,6 @@
 package cput.ac.za.recruitmentapp.domain.humanResource;
 
 import java.io.Serializable;
-import java.util.Set;
-
-import cput.ac.za.recruitmentapp.repository.humanResource.HumanResourceExperienceRepository;
-
 
 /**
  * Created by Tank on 4/22/2016.
@@ -18,7 +14,7 @@ public abstract class HumanResourceExperience implements Serializable
     private String endDate;
 
     public HumanResourceExperience(Builder builder)
-    {
+    {   this.id = builder.id;
         this.companyName = builder.companyName;
         this.duties = builder.duties;
         this.startDate = builder.startDate;
