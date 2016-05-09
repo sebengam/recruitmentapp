@@ -1,23 +1,22 @@
-package cput.ac.za.recruitmentapp.domain.humanResource;
+package cput.ac.za.recruitmentapp.restApi.humanResource.resource;
 
 import java.io.Serializable;
 
-
 /**
- * Created by student on 2016/04/03.
+ * Created by Tank on 5/8/2016.
  */
-public abstract class HumanResource extends HumanResourceExperience implements Serializable
+public class HumanResourceResource implements Serializable
 {
-    private Long id;
+    //private Long id;
     private String name;
     private String surname;
     private String candidateImage;
     private String industry;
     private String occupation;
 
-    public HumanResource(Builder builder)
+    public HumanResourceResource(Builder builder)
     {
-        this.id = builder.id;
+        //this.id = builder.id;
         this.name = builder.name;
         this.surname = builder.surname;
         this.candidateImage = builder.candidateImage;
@@ -25,9 +24,9 @@ public abstract class HumanResource extends HumanResourceExperience implements S
         this.occupation = builder.occupation;
     }
 
-    public Long getId() {
+   /* public Long getId() {
         return id;
-    }
+    }*/
 
     public String getName() {
         return name;
@@ -51,7 +50,7 @@ public abstract class HumanResource extends HumanResourceExperience implements S
 
     public static class Builder
     {
-        private Long id;
+        //private Long id;
         public String name;
         private String surname;
         private String candidateImage;
@@ -60,11 +59,11 @@ public abstract class HumanResource extends HumanResourceExperience implements S
 
 
 
-        public Builder id(Long value)
+      /*  public Builder id(Long value)
         {
             this.id = value;
             return this;
-        }
+        }*/
         public Builder name(String value)
         {
 
@@ -99,9 +98,9 @@ public abstract class HumanResource extends HumanResourceExperience implements S
 
 
 
-        public Builder copy(HumanResource value)
+        public Builder copy(HumanResourceResource value)
         {
-            this.id = value.id;
+           // this.id = value.id;
             this.name = value.name;
             this.surname = value.surname;
             this.candidateImage = value.candidateImage;
@@ -110,12 +109,10 @@ public abstract class HumanResource extends HumanResourceExperience implements S
             return this;
         }
 
-        public HumanResource build ()
+        public HumanResourceResource build ()
         {
-            return new HumanResource(this) {
+            return new HumanResourceResource(this) {
             };
         }
     }
-
-
 }
