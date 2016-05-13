@@ -1,26 +1,17 @@
 package cput.ac.za.recruitmentapp.conf.util;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
 /**
- * Created by hashcode on 2016/04/17.
+ * Created by Tank on 5/12/2016.
  */
-public class AppUtil {
+public class AppUtil
+{
+
     public static String getStringLocation(Map<String, String> location) {
         Gson gson = new Gson();
         return gson.toJson(location);
@@ -32,7 +23,7 @@ public class AppUtil {
         return gson.fromJson(value, typeOfHashMap);
     }
 
-    public static  Date getDate(String date) {
+    public static Date getDate(String date) {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
         Date value = null;
         try {

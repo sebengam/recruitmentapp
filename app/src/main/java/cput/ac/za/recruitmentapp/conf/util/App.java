@@ -2,26 +2,35 @@ package cput.ac.za.recruitmentapp.conf.util;
 
 import android.app.Application;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.text.TextUtils;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.Volley;
 
 
 /**
- * Created by hashcode on 2016/04/16.
+ * Created by Tank on 5/12/2016.
  */
-public class App extends Application {
-
+public class App extends Application
+{
     private static Context context;
+
+    private static App singleton;
     private RequestQueue requestQueue;
     private ImageLoader imageLoader;
 
-    private static App singleton;
 
-    public void onCreate() {
+    public void onCreate()
+    {
         super.onCreate();
         App.context = getApplicationContext();
         singleton = this;
     }
+
+
 
     public static Context getAppContext() {
         return App.context;
@@ -47,7 +56,17 @@ public class App extends Application {
         getRequestQueue();
         if (imageLoader == null) {
             imageLoader = new ImageLoader(this.requestQueue,
-                    new HashBitmapCache());
+                    new HashBitmapCache() {
+                        @Override
+                        public Bitmap getBitmap(String url) {
+                            return null;
+                        }
+
+                        @Override
+                        public void putBitmap(String url, Bitmap bitmap) {
+
+                        }
+                    });
         }
         return this.imageLoader;
     }
@@ -68,4 +87,7 @@ public class App extends Application {
             requestQueue.cancelAll(tag);
         }
     }
+
+
+
 }
