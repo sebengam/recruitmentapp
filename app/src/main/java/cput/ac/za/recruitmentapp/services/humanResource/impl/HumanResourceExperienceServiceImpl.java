@@ -91,20 +91,20 @@ public class HumanResourceExperienceServiceImpl extends IntentService implements
             } else if (ACTION_UPDATE.equals(action))
             {
                 final HumanResourceExperience humanResourceExperience = (HumanResourceExperience) intent.getSerializableExtra(EXTRA_UPDATE);
-                updateHumanResourceExperience(humanResourceExperience);
+                try {
+                    updateHumanResourceExperience(humanResourceExperience);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
 
 
-    private void updateHumanResourceExperience(HumanResourceExperience humanResourceExperience) {
+    private void updateHumanResourceExperience(HumanResourceExperience humanResourceExperience) throws IOException {
         //POST and Save Local
-        try {
-            HumanResourceExperience updatedHumanResourceExperience = api.updateHumanResourceExperince(humanResourceExperience);
-            repo.save(updatedHumanResourceExperience);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        HumanResourceExperience updatedHumanResourceExperience = api.updateHumanResourceExperince(humanResourceExperience);
+        repo.save(updatedHumanResourceExperience);
     }
 
     private void postHumanResourceExperience(HumanResourceExperience humanResourceExperience) {

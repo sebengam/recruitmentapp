@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="activateButton" type="id" />
+    <item name="activate_emailAddress" type="id" />
+    <item name="activate_password" type="id" />
+    <item name="activate_organisationCode" type="id" />
+    <item name="activate_activateButton" type="id" />
+</resources>

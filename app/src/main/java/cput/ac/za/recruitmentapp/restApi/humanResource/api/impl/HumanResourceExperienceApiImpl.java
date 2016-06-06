@@ -1,8 +1,8 @@
 package cput.ac.za.recruitmentapp.restApi.humanResource.api.impl;
 
-import android.app.DownloadManager;
-
-import com.android.volley.Response;
+import com.google.gson.Gson;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
 
 import java.io.IOException;
 
@@ -24,30 +24,30 @@ public abstract class HumanResourceExperienceAPIImpl implements HumanResourceExp
     public HumanResourceExperience createHumanResourceExperience(HumanResourceExperience experience) throws IOException {
         String json = new Gson().toJson(experience);
         RequestBody body = RequestBody.create(AppUtil.getJSONMediaType(), json);
-        DownloadManager.Request request = new DownloadManager.Request.Builder()
+        Request request = new Request.Builder()
                 .url(postUrl)
                 .post(body)
                 .build();
-        Response response = AppUtil.getConnection().newCall(request).execute();
+        com.squareup.okhttp.Response response = AppUtil.getConnection().newCall(request).execute();
         String value = response.body().string();
-        PersonAddress personAddress = new Gson().fromJson(value, PersonAddress.class);
-        return personAddress;
+        HumanResourceExperience humanResourceExperience = new Gson().fromJson(value, HumanResourceExperience.class);
+        return humanResourceExperience;
     }
 
     @Override
-    public PersonAddress updatePersonAddress(PersonAddress address) throws IOException {
-        String json = new Gson().toJson(address);
+    public HumanResourceExperience updateHumanResourceExperience(HumanResourceExperience experience) throws IOException {
+        String json = new Gson().toJson(experience);
         RequestBody body = RequestBody.create(AppUtil.getJSONMediaType(), json);
         Request request = new Request.Builder()
                 .url(updateUrl)
                 .post(body)
                 .build();
-        Response response = AppUtil.getConnection().newCall(request).execute();
+        com.squareup.okhttp.Response response = AppUtil.getConnection().newCall(request).execute();
         String value = response.body().string();
-        PersonAddress personAddress = new Gson().fromJson(value, PersonAddress.class);
-        return personAddress;
+        HumanResourceExperience humanResourceExperience = new Gson().fromJson(value, HumanResourceExperience.class);
+        return humanResourceExperience;
     }
 
 
+    public abstract HumanResourceExperience updateHumanResourceExperince(HumanResourceExperience experience) throws IOException;
 }
-//
