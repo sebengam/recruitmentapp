@@ -7,7 +7,7 @@ import cput.ac.za.recruitmentapp.domain.Administrator.Administrator;
  */
 public class AdministratorFactory {
 
-    public static Administrator getAdministrator(String staffNumber, boolean booking, float totalWage) {
+    public static Administrator getAdministrator(String staffNumber, String booking, float totalWage) {
         Administrator myAdministrator = new Administrator.Builder()
                 .staffNumber(staffNumber)
                 .booking(booking)

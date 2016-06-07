@@ -1,11 +1,10 @@
 package cput.ac.za.recruitmentapp.Domain.humanResource.humanResource.Client;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
-import cput.ac.za.recruitmentmanager.domain.client.Client;
-import cput.ac.za.recruitmentmanager.factory.client.ClientFactory;
+import cput.ac.za.recruitmentapp.domain.client.Client;
+import cput.ac.za.recruitmentapp.factory.client.ClientFactory;
 
 
 /**
@@ -13,21 +12,16 @@ import cput.ac.za.recruitmentmanager.factory.client.ClientFactory;
  */
 public class ClienTest
 {
+    Client client = ClientFactory.getClient("CPUT","88856","1");
 
-    private Client client;
-
-    @Before
-    public void setUp() throws Exception
-    {
-
-        client = ClientFactory.getClient("CPUT", "88856");
-    }
 
     @Test
     public void testPerson() throws Exception
     {
+
         Assert.assertEquals(client.getRegNumber(),"88856");
         Assert.assertEquals(client.getCompanyName(),"CPUT");
+        Assert.assertEquals(client.getEmail(),"1");
 
 
 
@@ -39,9 +33,11 @@ public class ClienTest
                 .copy(client)
                 .regNumber("88856")
                 .companyName("CPUT")
+                .email("1")
                 .build();
         Assert.assertEquals(companyUpdate.getRegNumber(),"88856");
         Assert.assertEquals(companyUpdate.getCompanyName(), "CPUT");
+        Assert.assertEquals(companyUpdate.getEmail(),"1");
 
     }
 }

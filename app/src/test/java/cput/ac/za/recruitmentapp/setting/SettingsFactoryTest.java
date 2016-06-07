@@ -1,16 +1,17 @@
-package cput.ac.za.recruitmentapp.setting;/*package cput.ac.za.recruitmentmanager.setting;
+package cput.ac.za.recruitmentapp.setting;
 
 import junit.framework.Assert;
 
 import org.junit.Test;
 
-import cput.ac.za.recruitmentmanager.domain.settings.Settings;
-import cput.ac.za.recruitmentmanager.factory.settings.SettingsFactory;
+import cput.ac.za.recruitmentapp.domain.settings.Settings;
+import cput.ac.za.recruitmentapp.factory.settings.SettingsFactory;
+
 
 /**
  * Created by Tank on 4/21/2016.
  */
-/*public class SettingsFactoryTest
+public class SettingsFactoryTest
 {
     @Test
     public void testCreate() throws Exception {
@@ -32,4 +33,3 @@ import cput.ac.za.recruitmentmanager.factory.settings.SettingsFactory;
     }
 
 }
-*/

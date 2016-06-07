@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.Set;
+
 import cput.ac.za.recruitmentapp.conf.database.DBConstants;
 import cput.ac.za.recruitmentapp.domain.Administrator.Administrator;
 import cput.ac.za.recruitmentapp.repository.administrator.AdministratorRepository;
@@ -15,7 +17,7 @@ import cput.ac.za.recruitmentapp.repository.administrator.AdministratorRepositor
 /**
  * Created by Tank on 5/7/2016.
  */
-public abstract class AdministratorRepositoryImpl extends SQLiteOpenHelper implements AdministratorRepository
+public class AdministratorRepositoryImpl extends SQLiteOpenHelper implements AdministratorRepository
 {
 
     public static final String TABLE_NAME = "Client Booking";
@@ -79,7 +81,7 @@ public abstract class AdministratorRepositoryImpl extends SQLiteOpenHelper imple
 
                     .id(cursor.getLong(cursor.getColumnIndex(COLUMN_ID)))
                     .staffNumber(cursor.getString(cursor.getColumnIndex(COLUMN_STAFFNUMBER)))
-                    .booking(Boolean.parseBoolean(cursor.getString(cursor.getColumnIndex(COLUMN_BOOKING))))
+                    .booking(cursor.getString(cursor.getColumnIndex(COLUMN_BOOKING)))
                     .totalWage(Float.parseFloat((cursor.getString(cursor.getColumnIndex(COLUMN_TOTALWAGES)))))
                     .build();
             return humanResource;
@@ -125,6 +127,16 @@ public abstract class AdministratorRepositoryImpl extends SQLiteOpenHelper imple
         );
         return entity;
 
+    }
+
+    @Override
+    public Administrator delete(Administrator entity) {
+        return null;
+    }
+
+    @Override
+    public Set<Administrator> findAll() {
+        return null;
     }
 
 

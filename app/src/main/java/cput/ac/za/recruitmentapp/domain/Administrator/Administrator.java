@@ -9,7 +9,7 @@ public class Administrator implements Serializable
 {
     private Long id;
     private String staffNumber;
-    public boolean booking;
+    public String booking;
     private float totalWage;
 
     public Administrator (Builder builder)
@@ -22,7 +22,7 @@ public class Administrator implements Serializable
 
 
 
-    public Boolean getBooking() {
+    public String getBooking() {
 
         return booking;
     }
@@ -44,7 +44,7 @@ public class Administrator implements Serializable
     public static class Builder
     {
         Long id;
-        boolean booking;
+        String booking;
         String staffNumber;
         float totalWage;
 
@@ -61,7 +61,7 @@ public class Administrator implements Serializable
             return this;
         }
 
-        public Builder booking(boolean booking)
+        public Builder booking(String booking)
         {
             this.booking = booking;
             return this;
@@ -91,4 +91,10 @@ public class Administrator implements Serializable
 
     }
 
+
+    @Override
+    public String toString()
+    {
+        return String.format("Id : %d\nstaffNumber :%s\nbooking :%.2f\ntotalWage :%s",id,staffNumber,booking,totalWage);
+    }
 }

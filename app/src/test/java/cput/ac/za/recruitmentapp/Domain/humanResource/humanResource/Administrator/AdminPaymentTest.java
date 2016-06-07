@@ -5,8 +5,9 @@ import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import cput.ac.za.recruitmentmanager.domain.Administrator.AdminPayment;
-import cput.ac.za.recruitmentmanager.factory.administrator.AdminPaymentFactory;
+import cput.ac.za.recruitmentapp.domain.Administrator.AdminPayment;
+import cput.ac.za.recruitmentapp.factory.administrator.AdminPaymentFactory;
+
 
 /**
  * Created by Tank on 4/23/2016.
@@ -14,7 +15,7 @@ import cput.ac.za.recruitmentmanager.factory.administrator.AdminPaymentFactory;
 public class AdminPaymentTest
 {
 
-    private cput.ac.za.recruitmentmanager.domain.Administrator.AdminPayment adminPayment;
+    private AdminPayment adminPayment;
 
     @Before
     public void setUp() throws Exception

@@ -8,7 +8,7 @@ import cput.ac.za.recruitmentapp.domain.humanResource.HumanResource;
  */
 public class HumanResourceFactory
 {
-    public static HumanResource getHumanResource(String name, String surname, String candidateImage, String industry, String occupation)
+    public static HumanResource getHumanResource(String name, String surname, String candidateImage, String industry, String occupation,String email)
     {
         HumanResource myCompany = new HumanResource.Builder()
                 .name(name)
@@ -16,6 +16,7 @@ public class HumanResourceFactory
                 .candidateImage(candidateImage)
                 .industry(industry)
                 .occupation(occupation)
+                .email(email)
                 .build();
         return myCompany;
 

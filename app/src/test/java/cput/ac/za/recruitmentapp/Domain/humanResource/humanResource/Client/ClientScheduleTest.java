@@ -4,8 +4,9 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import cput.ac.za.recruitmentmanager.domain.client.ClientSchedule;
-import cput.ac.za.recruitmentmanager.factory.client.ClientScheduleFactory;
+import cput.ac.za.recruitmentapp.domain.client.ClientSchedule;
+import cput.ac.za.recruitmentapp.factory.client.ClientScheduleFactory;
+
 
 /**
  * Created by Tank on 4/23/2016.

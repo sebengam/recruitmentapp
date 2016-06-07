@@ -4,8 +4,9 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import cput.ac.za.recruitmentmanager.domain.humanResource.HumanResourceLocation;
-import cput.ac.za.recruitmentmanager.factory.humanResource.HumanResourceLocationFactory;
+import cput.ac.za.recruitmentapp.domain.humanResource.HumanResourceLocation;
+import cput.ac.za.recruitmentapp.factory.humanResource.HumanResourceLocationFactory;
+
 
 /**
  * Created by Tank on 4/23/2016.

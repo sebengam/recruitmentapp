@@ -5,8 +5,9 @@ import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import cput.ac.za.recruitmentmanager.domain.Administrator.AdminWages;
-import cput.ac.za.recruitmentmanager.factory.administrator.AdminWagesFactory;
+import cput.ac.za.recruitmentapp.domain.Administrator.AdminWages;
+import cput.ac.za.recruitmentapp.factory.administrator.AdminWagesFactory;
+
 
 /**
  * Created by Tank on 4/23/2016.

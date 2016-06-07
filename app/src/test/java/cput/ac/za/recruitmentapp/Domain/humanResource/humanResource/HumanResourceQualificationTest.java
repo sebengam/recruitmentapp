@@ -4,8 +4,8 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import cput.ac.za.recruitmentmanagerapp.domain.humanResource.HumanResourceQualification;
-import cput.ac.za.recruitmentmanagerapp.factory.humanResource.HumanResourceQualificationFactory;
+import cput.ac.za.recruitmentapp.domain.humanResource.HumanResourceQualification;
+import cput.ac.za.recruitmentapp.factory.humanResource.HumanResourceQualificationFactory;
 
 
 /**

@@ -4,13 +4,13 @@
 package cput.ac.za.recruitmentapp.Domain.humanResource.humanResource.Administrator;
 
 
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import cput.ac.za.recruitmentmanager.domain.Administrator.Administrator;
-import cput.ac.za.recruitmentmanager.factory.administrator.AdministratorFactory;
+import cput.ac.za.recruitmentapp.domain.Administrator.Administrator;
+import cput.ac.za.recruitmentapp.factory.administrator.AdministratorFactory;
+
 
 /**
  * Created by student on 2016/04/03.

@@ -10,11 +10,13 @@ public class Client implements Serializable
     private long id;
     private String companyName;
     private String regNumber;
+    private String email;
 
     public Client(Builder builder) {
         this.id = builder.id;
         this.companyName = builder.companyName;
         this.regNumber = builder.regNumber;
+        this.email = builder.email;
 
     }
 
@@ -34,6 +36,9 @@ public class Client implements Serializable
         return regNumber;
     }
 
+    public String getEmail() {
+        return email;
+    }
 
     public static class Builder
     {
@@ -41,6 +46,7 @@ public class Client implements Serializable
         private String companyName;
         private String regNumber;
         public long id;
+        private String email;
 
 
         public Builder id(Long value){
@@ -53,8 +59,10 @@ public class Client implements Serializable
             return this;
         }
 
-        public Builder() {
-
+        public Builder email(String value)
+        {
+            this.email = value;
+            return this;
         }
 
 
@@ -64,8 +72,10 @@ public class Client implements Serializable
         }
 
         public Builder copy(Client client){
+            this.id = client.id;
             this.companyName = client.getCompanyName();
             this.regNumber = client.getRegNumber();
+            this.email = client.getEmail();
 
             return this;
         }

@@ -7,7 +7,10 @@ import cput.ac.za.recruitmentmanager.domain.humanResource.HumanResource;
 /**
  * Created by Tank on 4/21/2016.
  */
-/*public class Settings extends HumanResource implements Serializable
+
+import java.io.Serializable;
+
+public class Settings implements Serializable
 {
 
     private Long id;
@@ -65,7 +68,7 @@ import cput.ac.za.recruitmentmanager.domain.humanResource.HumanResource;
             return this;
         }
 
-        public Builder copy(HumanResource value){
+        public Builder copy(Settings value){
             this.password=value.password;
             this.username=value.username;
             this.code = value.code;
@@ -78,20 +81,4 @@ import cput.ac.za.recruitmentmanager.domain.humanResource.HumanResource;
         }
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Settings settings = (Settings) o;
-
-        return id.equals(settings.id);
-
-    }
-
-    @Override
-    public int hashCode() {
-        return id.hashCode();
-    }
-
-}*/
+}

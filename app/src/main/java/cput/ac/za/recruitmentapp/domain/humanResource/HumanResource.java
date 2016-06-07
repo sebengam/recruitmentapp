@@ -14,6 +14,7 @@ public abstract class HumanResource extends HumanResourceExperience implements S
     private String candidateImage;
     private String industry;
     private String occupation;
+    private String email;
 
     public HumanResource(Builder builder)
     {
@@ -23,6 +24,11 @@ public abstract class HumanResource extends HumanResourceExperience implements S
         this.candidateImage = builder.candidateImage;
         this.industry = builder.industry;
         this.occupation = builder.occupation;
+        this.email = builder.email;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public Long getId() {
@@ -57,6 +63,7 @@ public abstract class HumanResource extends HumanResourceExperience implements S
         private String candidateImage;
         private String industry;
         private String occupation;
+        private String email;
 
 
 
@@ -65,6 +72,14 @@ public abstract class HumanResource extends HumanResourceExperience implements S
             this.id = value;
             return this;
         }
+
+        public Builder email(String value)
+        {
+
+            this.email = value;
+            return this;
+        }
+
         public Builder name(String value)
         {
 
@@ -107,6 +122,7 @@ public abstract class HumanResource extends HumanResourceExperience implements S
             this.candidateImage = value.candidateImage;
             this.industry = value.industry;
             this.occupation = value.occupation;
+            this.email = value.email;
             return this;
         }
 
